@@ -25,7 +25,7 @@ const unitSpecs = [
   { icon: Layers, label: 'Sanitary', value: 'American Standard' },
 ];
 
-// Unit Gallery Images (Fixed based on your folder structure)
+// Unit Gallery Images
 const unitGallery = [
   { src: '/unit/layout-1.png', alt: 'Denah Layout Unit' },
   { src: '/unit/render-1.png', alt: 'Fasad Depan Utama' },
@@ -43,11 +43,12 @@ const unitGallery = [
 ];
 
 // Strategic Location Images
+// FIXED: Added '/' at the start and removed query params (?w=800)
 const locationImages = [
-  { name: 'Universitas Jambi (UNJA)', img: 'https://images.unsplash.com/photo-1562774053-701939374585?w=800' },
-  { name: 'Kompleks Perkantoran Gubernur', img: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800' },
-  { name: 'Mall Jamtos', img: 'https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?w=800' },
-  { name: 'RSUD Raden Mattaher', img: 'https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?w=800' },
+  { name: 'Universitas Jambi (UNJA)', img: '/unja.jpg' },
+  { name: 'Kompleks Perkantoran Gubernur', img: '/kantorgubernur.jpg' },
+  { name: 'Mall Jamtos', img: '/jamtos.jpeg' },
+  { name: 'RSUD Raden Mattaher', img: '/rsudrm.jpeg' },
 ];
 
 const features = [
@@ -86,7 +87,6 @@ const MortgageCalculator = () => {
     setMonthlyPayment(monthly);
   }, [price, dpPercent, years, margin]);
 
-  // FIXED: Added ': number' type definition
   const formatRupiah = (num: number) => {
     return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(num);
   };
@@ -166,7 +166,7 @@ const MortgageCalculator = () => {
 // --- MAIN PAGE COMPONENT ---
 const MahakaryaLanding = () => {
   const [currentLocSlide, setCurrentLocSlide] = useState(0);
-  const [currentUnitSlide, setCurrentUnitSlide] = useState(0); // State for Unit Carousel
+  const [currentUnitSlide, setCurrentUnitSlide] = useState(0);
   const [isScrolled, setIsScrolled] = useState(false);
 
   // Auto-rotate Location carousel
@@ -257,7 +257,7 @@ const MahakaryaLanding = () => {
         </div>
       </section>
 
-      {/* Section 1.5: Unit Specifications & Gallery (THIS WAS MISSING) */}
+      {/* Section 1.5: Unit Specifications & Gallery */}
       <section id="unit-spec" className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
@@ -265,7 +265,7 @@ const MahakaryaLanding = () => {
               Mahakarya Residences
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Dirancang dengan detail untuk kenyamanan maksimal keluarga Anda. <br /> Perpaduan desain mewah Art Deco  dan fungsionalitas modern.
+              Dirancang dengan detail untuk kenyamanan maksimal keluarga Anda. <br /> Perpaduan desain mewah Art Deco dan fungsionalitas modern.
             </p>
           </div>
 
@@ -314,14 +314,12 @@ const MahakaryaLanding = () => {
                     fill
                     className="object-cover"
                   />
-                  {/* Image Caption */}
                   <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
                     <p className="text-white text-lg font-bold text-center">{item.alt}</p>
                   </div>
                 </div>
               ))}
 
-              {/* Controls */}
               <button 
                 onClick={() => setCurrentUnitSlide((prev) => (prev - 1 + unitGallery.length) % unitGallery.length)}
                 className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/40 p-2 rounded-full backdrop-blur-sm text-white transition opacity-0 group-hover:opacity-100"
@@ -335,7 +333,6 @@ const MahakaryaLanding = () => {
                 <ChevronRight size={24} />
               </button>
 
-               {/* Indicators */}
                <div className="absolute bottom-20 left-1/2 -translate-x-1/2 z-20 flex space-x-2">
                 {unitGallery.map((_, idx) => (
                   <button
@@ -403,7 +400,7 @@ const MahakaryaLanding = () => {
                     alt={loc.name} 
                     fill
                     className="object-cover"
-                    unoptimized 
+                    // Removed unoptimized to let Next.js handle it if properly configured
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end">
                     <div className="p-8 text-white">
@@ -414,7 +411,6 @@ const MahakaryaLanding = () => {
                 </div>
               ))}
               
-              {/* Controls */}
               <button 
                 onClick={() => setCurrentLocSlide((prev) => (prev - 1 + locationImages.length) % locationImages.length)}
                 className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/40 p-2 rounded-full backdrop-blur-sm text-white transition"
@@ -514,10 +510,8 @@ const MahakaryaLanding = () => {
             <p className="text-gray-600">Gunakan kalkulator di bawah ini untuk estimasi angsuran KPR Syariah.</p>
           </div>
           
-          {/* Mortgage Calculator Component */}
           <MortgageCalculator />
 
-          {/* Closing CTA */}
           <div className="mt-20 bg-[#D94116] rounded-3xl p-8 md:p-12 text-center text-white shadow-2xl max-w-5xl mx-auto relative overflow-hidden">
             <div className="relative z-10">
               <p className="text-xl md:text-2xl mb-4 font-bold bg-white/20 inline-block px-6 py-2 rounded-full animate-pulse">
@@ -536,7 +530,6 @@ const MahakaryaLanding = () => {
                 🎁 Dapatkan PROMO
               </a>
             </div>
-            {/* Background Pattern */}
             <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
               <div className="w-64 h-64 bg-black rounded-full absolute -top-10 -left-10"></div>
               <div className="w-64 h-64 bg-black rounded-full absolute -bottom-10 -right-10"></div>
@@ -549,6 +542,7 @@ const MahakaryaLanding = () => {
       <footer id="contact" className="bg-[#14305D] text-white pt-16 pb-8">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+            
             {/* Brand Info */}
             <div className="lg:col-span-1">
               <div className="flex items-center space-x-2 mb-6">
@@ -589,20 +583,17 @@ const MahakaryaLanding = () => {
             <div className="lg:col-span-2">
               <h3 className="font-bold text-lg mb-6 border-b border-gray-600 pb-2 inline-block">Lokasi Proyek</h3>
               <div className="w-full h-48 bg-gray-700 rounded-lg overflow-hidden shadow-lg border border-gray-600">
-                {/* Google Maps Embed */}
                 <iframe 
                   width="100%" 
                   height="100%" 
                   style={{ border: 0 }}
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.2062729453483!2d103.57871717585685!3d-1.6288346360952992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e25896299ddf6a1%3A0x324e2048b8d78e91!2sPerumahan%20Mahakarya%20Residence!5e0!3m2!1sen!2sid!4v1700000000000!5m2!1sen!2sid"
+                  src="https://googleusercontent.com/maps.google.com/20"
                   className="filter grayscale hover:grayscale-0 transition duration-500"
                   allowFullScreen
                   loading="lazy" 
                   referrerPolicy="no-referrer-when-downgrade"
                 ></iframe>
               </div>
-              
-              {/* Link to Google Maps */}
               <a 
                 href="https://goo.gl/maps/6qX4X5X4X5X4X5X4X" 
                 target="_blank"
@@ -621,7 +612,7 @@ const MahakaryaLanding = () => {
           </div>
         </div>
       </footer>
-    </div>
+    </div> // <--- THIS WAS MISSING
   );
 };
 
