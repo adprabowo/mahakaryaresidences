@@ -11,7 +11,7 @@ import {
 
 // --- CONFIGURATION & DATA ---
 const whatsappNumber = '6285377347995';
-const waLink = `https://wa.me/${whatsappNumber}?text=Halo%20Mahakarya%20Residences,%20saya%20tertarik%20untuk%20survey%20lokasi.`;
+const waLink = `https://wa.me/${whatsappNumber}?text=Halo%20Mahakarya%20Residence,%20saya%20tertarik%20untuk%20survey%20lokasi.`;
 
 // Unit Specification Data
 const unitSpecs = [
@@ -205,7 +205,7 @@ const MahakaryaLanding = () => {
               <Home className="w-6 h-6 md:w-8 md:h-8 text-[#14305D]" />
             </div>
             <span className={`font-bold text-xl md:text-2xl transition-colors ${isScrolled ? 'text-white' : 'text-white drop-shadow-md'}`}>
-              Mahakarya Residences
+              Mahakarya Residence
             </span>
           </div>
           
@@ -228,7 +228,7 @@ const MahakaryaLanding = () => {
         <div className="absolute inset-0 z-0">
           <Image 
             src="/fasadmahakarya.png"
-            alt="Mahakarya Residences Facade"
+            alt="Mahakarya Residence Facade"
             fill
             className="object-cover"
             priority
@@ -262,7 +262,7 @@ const MahakaryaLanding = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-[#14305D] mb-4">
-              Mahakarya Residences
+              Mahakarya Residence
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               Dirancang dengan detail untuk kenyamanan maksimal keluarga Anda. <br /> Perpaduan desain mewah Art Deco dan fungsionalitas modern.
@@ -445,7 +445,7 @@ const MahakaryaLanding = () => {
         <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
         <div className="container mx-auto px-4 text-center relative z-10">
           <h2 className="text-3xl md:text-5xl font-bold mb-4">
-            Mahakarya Residences
+            Mahakarya Residence
           </h2>
           <p className="text-xl md:text-2xl mb-10 font-light text-gray-300">
             Termewah dan Termurah di Kelasnya
@@ -465,7 +465,7 @@ const MahakaryaLanding = () => {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-[#14305D] text-center mb-16">
-            Kenapa Harus Mahakarya Residences?
+            Kenapa Harus Mahakarya Residence?
           </h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
@@ -519,7 +519,7 @@ const MahakaryaLanding = () => {
               </p>
               <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-tight">
                 Konsultasi Gratis Sekarang dan Dapatkan<br className="hidden md:block"/>
-                Penawaran Terbaik Mahakarya Residences!
+                Penawaran Terbaik Mahakarya Residence!
               </h2>
               <a 
                 href={waLink} 
@@ -549,7 +549,7 @@ const MahakaryaLanding = () => {
                 <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
                   <Home className="w-6 h-6 text-[#14305D]" />
                 </div>
-                <span className="font-bold text-xl">Mahakarya<br/>Residences</span>
+                <span className="font-bold text-xl">Mahakarya<br/>Residence</span>
               </div>
               <p className="text-gray-300 text-sm leading-relaxed mb-6">
                 Hunian mewah dengan harga terjangkau di lokasi paling strategis Jambi. Investasi terbaik untuk masa depan keluarga Anda.
@@ -574,7 +574,7 @@ const MahakaryaLanding = () => {
                 </li>
                 <li className="flex items-center space-x-3">
                   <Mail className="w-5 h-5 flex-shrink-0 text-[#D94116]" />
-                  <span>info@mahakaryaresidences.com</span>
+                  <span>info@mahakaryaresidence.com</span>
                 </li>
               </ul>
             </div>
@@ -607,7 +607,7 @@ const MahakaryaLanding = () => {
 
           <div className="border-t border-white/10 pt-8 text-center">
             <p className="text-gray-400 text-sm">
-              © 2026 Mahakarya Residences. All Rights Reserved.
+              © 2026 Mahakarya Residence. All Rights Reserved.
             </p>
           </div>
         </div>
