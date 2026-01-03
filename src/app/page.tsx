@@ -86,7 +86,7 @@ const MortgageCalculator = () => {
     setMonthlyPayment(monthly);
   }, [price, dpPercent, years, margin]);
 
-  const formatRupiah = (num) => {
+  const formatRupiah = (num: number) => {
     return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(num);
   };
 
